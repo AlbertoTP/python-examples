@@ -5,6 +5,7 @@
 
 from classes.game import Person,bcolors
 from classes.magic import Spell
+from classes.inventory import Item
 
 #Create Black Magic
 fire = Spell("Fire",10,100,"black")
@@ -16,11 +17,23 @@ quake = Spell("Quake",10,100,"black")
 #Create white Magic
 cure = Spell("Cure",10,100,"white")
 cura = Spell("Cura",20,500,"white")
-       
+
+#Create some items
+potion=Item("Potion","potion","Heals 50HP",50)
+hipotion=Item("Hi-Potion","potion","Heals 100 HP",100)
+superpotion=Item("Super Potion","potion","Heals 500 HP",500)
+elixer=Item("Elixer","elixer","Fully restore HP/MP of one member",9999)
+hielixer=Item("MegaElixer","elixer","Fully restores party's HP/MP",9999)
+
+grenade=Item("Grenade","attack","Deals 500 damage",500)
+
+player_spells=[fire, thunder,blizzard,meteor,cure,cura]
+player_items=[potion, hipotion, superpotion,elixer,hielixer,grenade]
+
 #Instantiate People
 #           hp,mp, atk, df, magic
-player=Person(500,90,60,34,[fire, thunder,blizzard,meteor,cure,cura])
-enemy=Person(1500,60,45,25,[])
+player=Person(500,90,60,34,player_spells,player_items)
+enemy=Person(1500,60,45,25,[],[])
 
 runnig=True
 i=0
@@ -46,6 +59,9 @@ while runnig:
         player.choose_magic()
         magic_choice=int(input("Choose magic:"))-1
         
+        if magic_choice == -1:
+            continue
+        
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
         
@@ -61,6 +77,24 @@ while runnig:
         elif spell.type == "black":
             enemy.take_damage(magic_dmg)
             print (bcolors.OKBLUE + "\n"+ spell.name+" deals "+str(magic_dmg)+" points of damage"+ bcolors.ENDC)
+    elif index==2:
+        player.choose_item()
+        item_choice=int(input("Choose item: "))-1
+        
+        if item_choice==-1:
+            continue
+        
+        item=player.items[item_choice]
+        if item.type=="potion":
+            player.heal(item.prop*-1)
+            print (bcolors.OKGREEN+"\n"+item.name+" heals for ",str(item.prop)," HP"+bcolors.ENDC)
+        elif item.type=="elixer":
+            player.hp=player.maxhp
+            player.mp=player.maxmp
+            print (bcolors.OKGREEN+"\n"+item.name+" fully restores HP/MP"+bcolors.ENDC)
+        elif item.type=="attack":
+            enemy.take_damage(item.prop)
+            print (bcolors.FAIL+"\n"+item.name+" deals ",str(item.prop)," points of damage"+bcolors.ENDC)
         
     enemy_choice=1
     enemy_damage=enemy.generate_damage()
