@@ -88,5 +88,5 @@ class Person:
         i=1
         print (bcolors.OKBLUE + bcolors.BOLD + "Magic" + bcolors.ENDC)
         for spell in self.magic:
-            print (str(i)+":{:10}".format(spell["name"]),"cost:{:3}".format(spell["cost"]) )
+            print (str(i)+":{:10}".format(spell.name),"cost:{:3}".format(spell.cost) )
             i+=1
