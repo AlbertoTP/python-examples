@@ -24,3 +24,25 @@ Examples of python
     * Heal Bars
     * Targets to attack
     * delete enemies died
+
+* JSON
+    * [simplejson](https://simplejson.readthedocs.io/en/latest/)
+    * [os](https://docs.python.org/3/tutorial/stdlib.html)
+    ```{r, engine='python', count_lines}
+    import simplejson as json
+    import os
+    ```
+* [Pypi](https://pypi.python.org/pypi)
+
+* Request
+    * ```
+      pip3 install requests
+      ```
+    * HTTP GET
+    * Pillow the image processing library (PIL)
+    * Posting Data
+    * Posting JSON
+    * Headers
+    * ```
+      pip3 install pillow
+      ```
