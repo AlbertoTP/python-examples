@@ -156,18 +156,18 @@ while runnig:
             break
         
         # Enemy attack phase
-#        for enemy in enemies:
-#            if len(enemies)==0:
-#                defeat_enemies=2
-#            enemy_choice = random.randrange(0, 2)
-#    
-#            if enemy_choice == 0:
-#                # Chose attack
-#                target = random.randrange(0, 3)
-#                enemy_dmg = enemy.generate_damage()
-#    
-#                players[target].take_damage(enemy_dmg)
-#                print(enemy.name.replace(" ", "") + " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
+        for enemy in enemies:
+            if len(enemies)==0:
+                defeat_enemies=2
+            #enemy_choice = random.randrange(0, 2)
+    
+            #if enemy_choice == 0:
+                # Chose attack
+            target = random.randrange(0, len(enemies))
+            enemy_dmg = enemy.generate_damage()
+
+            players[target].take_damage(enemy_dmg)
+            print(enemy.name.replace(" ", "") + " attacks " + players[target].name.replace(" ", "") + " for", enemy_dmg)
 #    
 #            elif enemy_choice == 1:
 #                spell, magic_dmg = enemy.choose_enemy_spell()
