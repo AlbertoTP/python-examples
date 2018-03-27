@@ -12,3 +12,15 @@ Examples of python
     num = re.sub(r'abc(def)ghi', '\1', input)    # Replace a string with a part of itself
     ```
     * eval()
+
+* Proy 2 Battle Game
+    * import
+    * classes (POO)
+    * Instance varibles
+    * colors in text
+    * menu
+    * Instantiate
+    * Adding classes (Magic,Items,Heal and diferents types)
+    * Heal Bars
+    * Targets to attack
+    * delete enemies died
