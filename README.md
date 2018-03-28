@@ -35,7 +35,8 @@ Examples of python
 * [Pypi](https://pypi.python.org/pypi)
 
 * Request
-    * ```
+    * [Requests](http://docs.python-requests.org/en/master/user/quickstart/)
+      ```
       pip3 install requests
       ```
     * HTTP GET
@@ -43,6 +44,16 @@ Examples of python
     * Posting Data
     * Posting JSON
     * Headers
-    * ```
+    * [Pillow](https://pillow.readthedocs.io/en/3.0.x/index.html) is the friendly PIL fork by Alex Clark and Contributors. PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+      ```
       pip3 install pillow
       ```
+* Proy 3 Web Scraper
+    * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for pulling data out of HTML and XML files.
+      ```
+      pip3 install bs4
+      ```
+    * Parsing BeautifulSoup
+    * Directional Navigation
+    * Image Scaper
+    * Improvement web scaper
