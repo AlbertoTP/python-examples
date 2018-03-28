@@ -24,5 +24,7 @@ for item in links:
     if item_text and item_href:
         print(item_text)
         print(item_href)
-        print(item.get_text())
+        #print(item.get_text())
+        children=item.find("h2")
+        print ("Next Sibling of the h2: ",children.next_sibling)
         print ("\n")
