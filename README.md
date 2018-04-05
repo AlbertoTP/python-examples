@@ -57,3 +57,39 @@ Examples of python
     * Directional Navigation
     * Image Scaper
     * Improvement web scaper
+
+* Proy 4 Getting started with pymongo
+    * Tools
+        * [Install MongoDB (V3.4)](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+        * [Robo 3T](https://robomongo.org/)
+    * [MongoDB](https://docs.mongodb.com/)
+    * Pymongo
+      ```
+      pip3 install pymongo
+      ```
+        * [Documentation](https://api.mongodb.com/python/current/)
+        * [Api Documentation](https://api.mongodb.com/python/current/api/)
+    * [Query and Projection Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+    * [Comparison Query Operators](https://docs.mongodb.com/manual/reference/operator/query-comparison/)
+
+
+        | Name 	| Description |
+        | --- | --- |
+        | $eq 	| Matches values that are equal to a specified value.
+        | $gt 	| Matches values that are greater than a specified value.
+        | $gte 	| Matches values that are greater than or equal to a specified value.
+        | $in 	| Matches any of the values specified in an array.
+        | $lt 	| Matches values that are less than a specified value.
+        | $lte 	| Matches values that are less than or equal to a specified value.
+        | $ne 	| Matches all values that are not equal to a specified value.
+        | $nin 	| Matches none of the values specified in an array.
+
+
+    * Making a Connection with MongoClient
+    * Getting a Database
+    * Getting a Collection
+    * Insert documents
+    * Getting a Single Document With find_one()
+    * Querying By Object
+    * Bulk Inserts
+    * Indexing
