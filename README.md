@@ -48,6 +48,7 @@ Examples of python
       ```
       pip3 install pillow
       ```
+
 * Proy 3 Web Scraper
     * [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) is a Python library for pulling data out of HTML and XML files.
       ```
@@ -93,3 +94,27 @@ Examples of python
     * Querying By Object
     * Bulk Inserts
     * Indexing
+
+* Proy 5 Web Development project using web.py
+    * [Web.py](http://webpy.org/)
+      ```
+      pip install web.py
+      pip install web.py==0.40.dev0
+      ```
+    * HTML templates
+    * Building MVC
+    * Import static files
+    * Setting up a register form
+    * Posting data to web.py
+    * Creating users
+    * Hashing password
+    * Login logic
+    * Sessions
+    * Logout
+    * Posting microblogs
+    * Retrieving post objects
+    * User settings and updating Mongo
+    * Relative datetimes
+    * Maling your post dates
+    * Adding post comments
+    * Images uploads and avatars
