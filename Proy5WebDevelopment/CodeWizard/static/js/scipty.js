@@ -15,4 +15,23 @@ $(document).ready(function(){
       }
     });
   });
+
+  $(document).on("submit", "#login-form", function(e){
+    e.preventDefault();
+    var form = $("#login-form").serialize();
+    $.ajax({
+      url: '/check-login',
+      type: 'POST',
+      data: form,
+      success: function(res){
+        if (res == "error"){
+          console.log("No login ");
+          alert("Could not log in");
+        }else{
+          console.log("Logged in as ",res);
+          window.location.href = "/";
+        }
+      }
+    })
+  });
 });
