@@ -1,4 +1,7 @@
 <div class="container" id="app">
-  <h1>Hello CodeWizards</h1>
-  <p>Home page</p>
+  $if session['user'] == 'none':
+    <h1> Hello CodeWizards </h1>
+  $else:
+    <h1>Hello $session['user']['name']</h1>
+  <p>Home page of PythonWebDevelopment</p>
 </div>
