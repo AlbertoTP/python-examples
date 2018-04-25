@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 import web
+from Models import RegisterModel
+#import RegisterModel
 
 urls = ('/','home',
         '/discover','discover',
         '/profile','profile',
         '/settings','settings',
         '/register','register',
+        '/postregistration','postregistration',
         '/hello/', 'hello')
 
 app = web.application(urls, globals(), autoreload=True)
@@ -38,6 +41,14 @@ class settings:
 class register:
     def GET(self):
         return render.Register()
+        
+class postregistration:
+    def POST(self):
+        data = web.input()
+        print ("data is (post) ",data)
+        reg_model=RegisterModel.RegisterModel()
+        reg_model.insert_user(data)
+        return data.username
         
 if __name__ == "__main__":
     app.run()
