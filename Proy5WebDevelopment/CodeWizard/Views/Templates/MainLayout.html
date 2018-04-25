@@ -1,5 +1,5 @@
 <div class="container" id="app">
-  $if session['user'] == 'none':
+  $if session['user'] == None:
     <h1> Hello CodeWizards </h1>
   $else:
     <h1>Hello $session['user']['name']</h1>

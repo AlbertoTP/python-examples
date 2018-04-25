@@ -16,7 +16,7 @@ urls = ('/','home',
         '/hello/', 'hello')
 
 app = web.application(urls, globals(), autoreload=True)
-session = web.session.Session(app, web.session.DiskStore("sessions"), initializer={'user': 'none'})
+session = web.session.Session(app, web.session.DiskStore("sessions"), initializer={'user': None})
 session_data = session._initializer
 
 render = web.template.render('Views/Templates/', base='Home', globals={'session': session_data, 'current_user': session_data["user"]})
@@ -75,7 +75,10 @@ class postregistration:
         
 class logout:
     def GET(self):
-        session.kill()
+        session['user']=None
+        session_data['user']=None
+        
+        #session.kill()
         return "success"
         
 if __name__ == "__main__":
