@@ -53,6 +53,38 @@ $var js: https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js stati
     </div>
     $:page
 
+    <div class="container">
+      <div class="row">
+       <div class="col-md-3">
+         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+          <li class="active"><a href="javascript:void(0)">Home</a></li>
+          <li><a href="javascript:void(0)">Profile</a></li>
+          <li class="disabled"><a href="javascript:void(0)">Disabled</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+              Dropdown <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:void(0)">Action</a></li>
+              <li><a href="javascript:void(0)">Another action</a></li>
+              <li><a href="javascript:void(0)">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="javascript:void(0)">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+       </div>
+       <div class="col-md-9">
+         <div class="post-box">
+           <form id="postActivity" name="postActivity">
+             <textarea name="content" class="post-input" rows="5" id="content" placeholder="What's new $session['user']['name'] ?"></textarea>
+             <button id="post-button" class="btn btn-raised btn-info waves-effect ripples" type="submit"><span class="glyphicon glyphicon-send"></span> send</button>
+           </form>
+          </div>
+       </div>
+      </div>
+    </div>
+
     $if self.js:
       $for script in self.js.split():
         <script src="$script"></script>

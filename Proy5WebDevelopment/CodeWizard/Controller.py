@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import web
-from Models import RegisterModel,LoginModel
+from Models import RegisterModel,LoginModel,Posts
 
 web.config.debug = False
 
@@ -13,6 +13,7 @@ urls = ('/','home',
         '/logout','logout',
         '/register','register',
         '/postregistration','postregistration',
+        '/postActivity', 'postActivity',
         '/hello/', 'hello')
 
 app = web.application(urls, globals(), autoreload=True)
@@ -30,6 +31,11 @@ class home:
     def GET(self):
         #print (self)
         #print (render)
+        data = type('obj', (object,),{"username":"beto","password":"beto"})
+        log=LoginModel.LoginModel()
+        isCorrect=log.check_user(data)
+        if isCorrect:
+            session_data['user'] = isCorrect
         return render.MainLayout()
         #return "<h1> Hello CodeWizards</h1>"
         
@@ -80,6 +86,15 @@ class logout:
         
         #session.kill()
         return "success"
+        
+class postActivity:
+    def POST(self):
+        data = web.input()
+        data.username=session_data['user']['username']
+        
+        post_model=Posts.Posts()
+        new_post=post_model.insert_post(data)
+        return 'success'
         
 if __name__ == "__main__":
     app.run()

@@ -48,5 +48,18 @@ $(document).ready(function(){
         }
       }
     })
-  })
+  });
+
+  $(document).on("submit","#postActivity",function(e){
+    e.preventDefault();
+    var form = $("#postActivity").serialize();
+    $.ajax({
+      url: '/postActivity',
+      type: 'POST',
+      data: form,
+      success: function(res){
+        console.log(res);
+      }
+    });
+  });
 });
