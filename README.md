@@ -107,14 +107,17 @@ Examples of python
     * Setting up a register form
     * Posting data to web.py
     * Creating users
-    * Hashing password
+    * Hashing password with [bcrypt](https://pypi.org/project/bcrypt/)
+      ```
+      pip3 install bcrypt
+      ```
     * Login logic
     * Sessions
     * Logout
     * Posting microblogs
     * Retrieving post objects
-    * User settings and updating Mongo
     * Relative datetimes
-    * Maling your post dates
-    * Adding post comments
-    * Images uploads and avatars
+      ```
+      pip3 install humanize
+      ```
+    * Making your post dates

@@ -36,7 +36,12 @@ class home:
         isCorrect=log.check_user(data)
         if isCorrect:
             session_data['user'] = isCorrect
-        return render.MainLayout()
+            
+        post_model=Posts.Posts()
+        posts=post_model.get_all_posts()
+
+            #print (posts)
+        return render.MainLayout(posts)
         #return "<h1> Hello CodeWizards</h1>"
         
 class discover:

@@ -1,7 +1,70 @@
+$def with (posts)
 <div class="container" id="app">
   $if session['user'] == None:
     <h1> Hello CodeWizards </h1>
   $else:
     <h1>Hello $session['user']['name']</h1>
   <p>Home page of PythonWebDevelopment</p>
+</div>
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-3">
+     <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+      <li class="active"><a href="javascript:void(0)">Home</a></li>
+      <li><a href="javascript:void(0)">Profile</a></li>
+      <li class="disabled"><a href="javascript:void(0)">Disabled</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)">Action</a></li>
+          <li><a href="javascript:void(0)">Another action</a></li>
+          <li><a href="javascript:void(0)">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="javascript:void(0)">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+   </div>
+   <div class="col-md-9">
+     <div class="post-box">
+       <form id="postActivity" name="postActivity">
+         <textarea name="content" class="post-input" rows="5" id="content" placeholder="What's new $session['user']['name'] ?"></textarea>
+         <button id="post-button" class="btn btn-raised btn-info waves-effect ripples" type="submit"><span class="glyphicon glyphicon-send"></span> send</button>
+       </form>
+      </div>
+      <br><br>
+      <div class="container-fluid">
+        $for post in posts:
+          <div class="list-group">
+            <div class="list-group-item">
+              <div class="row-picture">
+                <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
+              </div>
+              <div class="row-content">
+                <div class="col-md-3">
+                  <h4 class="list-group-item-heading">$post['user']['name']</h4>
+                </div>
+                <div class="col-md-3">
+                  <h6 class="datetimes">$post['timestamp']</h6>
+                </div>
+                <div class="col-md-12">
+                  <p class="list-group-item-text">$post['content']</p>
+                </div>
+                <div class="btn-group">
+                 <button type="button" class="btn"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                 <button type="button" class="btn"><span class="glyphicon glyphicon-comment"></span></button>
+                 <button type="button" class="btn"><span class="glyphicon glyphicon-share-alt"></span></button>
+                </div>
+              </div>
+            </div>
+            <div class="list-group-separator"></div>
+          </div>
+
+      </div>
+    </div>
+   </div>
+  </div>
 </div>
