@@ -121,3 +121,10 @@ Examples of python
       pip3 install humanize
       ```
     * Making your post dates
+
+*Proy 6 Django WEB Framework
+    * [Django](https://www.djangoproject.com/)
+    * Project Setup
+    * Creating a blog app
+    * Setting up the admin site
+    * URLs and views
