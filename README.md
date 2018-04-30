@@ -124,7 +124,25 @@ Examples of python
 
 *Proy 6 Django WEB Framework
     * [Django](https://www.djangoproject.com/)
+      ```
+      pip3 install Django
+      ```
     * Project Setup
     * Creating a blog app
     * Setting up the admin site
     * URLs and views
+    * Html templates
+    * Dynamic template data
+    * Single post page
+    * Implementing Bootstrap
+      ```
+      pip3 install django-bootstrap3
+      pip3 install django-bootstrap4
+      ```
+    * Static files
+    * Template inheritance
+    * Post images
+      ```
+      python3 ./manage.py makemigrations blog
+      python3 ./manage.py migrate blog
+      ```

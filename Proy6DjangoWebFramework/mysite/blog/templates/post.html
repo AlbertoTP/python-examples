@@ -3,13 +3,12 @@
 {% block tittle %} My site: {{ post.tittle }} {% endblock %}
 
 {% block content %}
-
+  <div class="container-fluid">
     <a href="/">Back to index</a>
     <br>
-    
     <h2>{{ post.tittle }}</h2>
-    
-    <div>
+    <div class="container-fluid">
         {{ post.content }}
     </div>
+  </div>
 {% endblock %}

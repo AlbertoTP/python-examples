@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-    <h1>I'm a index template</h1>
-    
-    {% for post in posts %}
-        <div>
-            <h3><a href="/post/{{ post.slug }}">{{ post.tittle }}</a></h3>
-            <p>{{ post.summary }}</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Recent post</h1>
+      </div>
+      {% for post in posts %}
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.image.url }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.tittle }}</h5>
+              <p class="card-text">{{ post.summary }}</p>
+              <a href="/post/{{ post.slug }}" class="btn btn-primary">Go</a>
+            </div>
+          </div>
         </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
 
 {% endblock %}
