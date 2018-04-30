@@ -1,12 +1,15 @@
-{% load bootstrap4 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{% extends 'base.html' %}
 
-<a href="/">Back to index</a>
-<br>
+{% block tittle %} My site: {{ post.tittle }} {% endblock %}
 
-<h2>{{ post.tittle }}</h2>
+{% block content %}
 
-<div>
-    {{ post.content }}
-</div>
+    <a href="/">Back to index</a>
+    <br>
+    
+    <h2>{{ post.tittle }}</h2>
+    
+    <div>
+        {{ post.content }}
+    </div>
+{% endblock %}
