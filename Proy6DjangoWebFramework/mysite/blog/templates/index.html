@@ -1,1 +1,8 @@
 <h1>I'm a index template</h1>
+
+{% for post in posts %}
+    <div>
+        <h3><a href="/post/{{ post.slug }}">{{ post.tittle }}</a></h3>
+        <p>{{ post.summary }}</p>
+    </div>
+{% endfor %}
