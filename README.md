@@ -122,7 +122,7 @@ Examples of python
       ```
     * Making your post dates
 
-*Proy 6 Django WEB Framework
+* Proy 6 Django WEB Framework
     * [Django](https://www.djangoproject.com/)
       ```
       pip3 install Django
@@ -145,4 +145,10 @@ Examples of python
       ```
       python3 ./manage.py makemigrations blog
       python3 ./manage.py migrate blog
+      ```
+
+* Proy 7 GUI programming with PyQT
+    * [QT5](https://www.qt.io/)
+      ```
+      pip3 install sip pyqt5
       ```
